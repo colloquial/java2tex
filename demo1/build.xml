@@ -41,7 +41,7 @@
   <target name="j2t">
     <mkdir dir="${autocode.out.latex.dir}"/>
     <java classname="com.colloquial.java2tex.Java2Tex"
-          classpath="../java2tex-a.jar"
+          classpath="lib/java2tex-a.jar"
           fork="true">
       <arg value="${autocode.src.dir}"/>
       <arg value="${autocode.out.latex.dir}"/>
@@ -59,9 +59,7 @@
     <!-- execs from latex -->
     <exec executable="pdflatex"
           dir="latex">
-      <arg value="-aux-directory=../build/latex-aux"/>
       <arg value="-output-directory=../build"/>
-      <arg value="-include-directory=../../styles/"/>
       <arg value="book.tex"/>
     </exec>
   </target>

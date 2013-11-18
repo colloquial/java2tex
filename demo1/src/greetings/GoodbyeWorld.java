@@ -10,6 +10,7 @@ public class GoodbyeWorld {
     /*x GoodbyeWorld.2*/
     public static void goodbye() {
         /*bbf*/System.out.println/*ebf*/("goodbye");
+        char c = 'f';
     }
     /*x*/
 }
