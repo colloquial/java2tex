@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<project name="Java To TeX"
+         default="jar"
+         basedir=".">
+
+  <property name="version"
+            value="a"/>
+
+  <property name="jar"
+            value="java2tex-${version}.jar"/>
+
+  <target name="clean">
+    <delete dir="build"/>
+    <delete file="${jar}"/>
+    <ant dir="demo1" target="clean"/>
+  </target>
+
+  <target name="jar">
+    <mkdir dir="build/classes"/>
+    <javac optimize="on"
+           debug="yes"
+           debuglevel="source,lines,vars"
+           destdir="build/classes"
+           includeantruntime="false">
+      <src path="src/"/>
+    </javac>
+    <jar destfile="${jar}">
+      <fileset dir="build/classes"
+               includes="**/*.class"/>
+    </jar>
+    <copy file="${jar}"
+          todir="demo1/lib"/>
+  </target>
+
+</project>

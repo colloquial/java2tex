@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<project name="Sample Book"
+         basedir=".">
+
+  <property name="jar"
+            value="build/demo1.jar"/>
+
+  <property name="autocode.src.dir"
+            value="src"/>
+  <property name="autocode.out.latex.dir"
+            value="latex/autoCode/"/>
+  <property name="line.length"
+            value="50"/>
+  <property name="in.encoding"
+            value="UTF-8"/>
+  <property name="out.encoding"
+            value="UTF-8"/>
+  <property name="file.pattern"
+            value="\.java$"/>
+  <target name="clean">
+    <delete dir="build"/>
+    <delete dir="${autocode.out.latex.dir}"/>
+    <delete file="book.pdf"/>
+  </target>
+
+  <target name="jar">
+    <mkdir dir="build/classes"/>
+    <javac optimize="on"
+           debug="yes"
+           debuglevel="source,lines,vars"
+           destdir="build/classes">
+      <src path="src/"/>
+    </javac>
+    <jar destfile="${jar}">
+      <fileset dir="build/classes"
+               includes="**/*.class"/>
+    </jar>
+  </target>
+
+  <target name="j2t">
+    <mkdir dir="${autocode.out.latex.dir}"/>
+    <java classname="com.colloquial.java2tex.Java2Tex"
+          classpath="../java2tex-a.jar"
+          fork="true">
+      <arg value="${autocode.src.dir}"/>
+      <arg value="${autocode.out.latex.dir}"/>
+      <arg value="${line.length}"/>
+      <arg value="${in.encoding}"/>
+      <arg value="${out.encoding}"/>
+      <arg value="${file.pattern}"/>
+    </java>
+  </target>
+
+  <target name="book"
+          depends="j2t">
+    <mkdir dir="build/latex-aux"/>
+    <delete file="build/book.pdf"/>
+    <!-- execs from latex -->
+    <exec executable="pdflatex"
+          dir="latex">
+      <arg value="-aux-directory=../build/latex-aux"/>
+      <arg value="-output-directory=../build"/>
+      <arg value="-include-directory=../../styles/"/>
+      <arg value="book.tex"/>
+    </exec>
+  </target>
+
+</project>

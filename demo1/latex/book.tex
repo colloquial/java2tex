@@ -1,0 +1,637 @@
+\documentclass[11pt]{book}
+
+\usepackage{colloq-book}
+
+\begin{document}
+
+% FRONT MATTER
+% =========================================================
+\pagenumbering{roman}
+\setcounter{chapter}{0}
+\setcounter{section}{0}
+\pagestyle{empty}
+
+% First Simple Title Page (i)
+% ---------------------------------------------------------
+\cleardoublepage
+\vspace*{2.375in}
+\begin{center}
+{\hfill {\Huge Lucene 2.4}}
+\end{center}
+
+
+% Full Title Page (iii)
+% ---------------------------------------------------------
+\cleardoublepage
+\vspace*{1.125in}
+\begin{center}
+{\hfill {\fontsize{70}{100}\selectfont Lucene 2.4}}
+\\[0.75in]
+{\hfill {\Huge Mitzi Morris}}
+\\[-1pt]
+\vfill
+{\hfill {\large\bf Colloquial Book Company, Inc.}}
+\\[1pt]
+{\hfill {\small New York}}
+\\[-1pt]
+{\hfill {\small 2009}}
+\end{center}
+
+% Copyright Page (iv)
+% ---------------------------------------------------------
+\clearpage
+\vspace*{1.25in}
+\noindent
+{\footnotesize%
+\copyright \ \ Colloquial Book Company, Inc.
+\hfill
+\vfill
+\vfill
+\noindent{\it {\bf Pending:} Library of Congress Cataloging-in-Publication Data}
+\\[6pt]
+Morris, Mitzi.
+\\
+\hspace*{0.125in}{\it Lucene 2.4} / Mitzi Morris
+\\
+\hspace*{.5in}{p. cm.}
+\\
+\hspace*{0.125in}Includes bibliographical references and index.
+\\
+\hspace*{0.125in}ISBN X-XXX-XXXXX-X (pbk. : alk.~paper)
+\\[4pt]
+1. Information Retrieval  \ 2. Java (computer program language) \ \ I. Morris, Mitzi \ \ II. Title
+\\[2pt]
+\hspace*{0.125in}QAXXX.XXXXXXXX 2009
+\\[2pt]
+\hspace*{0.125in}XXX/.XX'X-xxXX      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ XXXXXXXX
+\vfill
+\noindent
+Text printed on demand in the United States of America.
+\\[12pt]
+All rights reserved. This book, or parts thereof, may not
+be reproduced in any form without permission of the publishers.
+}
+
+
+\newcommand{\bookname}{Lucene 2.4}
+\newcommand{\booknamecaps}{LUCENE 2.4}
+
+\newcommand{\firstchar}[1]{\noindent{\huge\bf #1}}
+
+
+
+% Preface (v-??)
+% ---------------------------------------------------------
+\clearpage
+\fancyhead{}
+\fancyfoot{}
+\pagestyle{fancy}
+\mychapterstar{Preface}{PREFACE}
+
+
+\thispagestyle{plain}
+
+\firstchar{G}oodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish.
+
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies and chips.
+
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish.
+
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish and chips.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies and chips.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish.
+Goodbye and thanks for all the fishies.
+Goodbye and thanks for all the fish.
+\\[0.2in]
+\newlength{\sigWidth}
+\settowidth{\sigWidth}{{\small\sc Mitzi Morris}}
+\mbox{ }
+\hfill
+\parbox{\sigWidth}{
+Mitzi Morris
+\\[2pt]\small
+\it New York
+\\
+June 2009}
+
+
+
+% Second Simple Title Page (i)
+% ---------------------------------------------------------
+\clearpage
+\pagestyle{empty}
+\cleardoublepage
+\vspace*{2.375in}
+\begin{center}
+{\hfill {\Huge Lucene 2.4}}
+\end{center}
+
+
+% BODY
+
+
+\mychapter{Introduction}{INTRODUCTION}%
+\setcounter{page}{1}%
+\pagenumbering{arabic}%
+\pagestyle{fancy}%
+
+\firstchar{W}hat is Lucene?
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+
+\mysection{More Introducing}
+
+\noindent
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+Lucene is a search engine written in Java.  Lucene is part of the
+open-source Apache project.
+%
+
+\mysection{Hello World}
+
+\noindent
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Here's a very simple Lucene program.  Very simple.
+Lucene.
+Lucene.
+Lucene.
+Lucene.
+Lucene.
+Lucene.
+Lucene.
+Lucene.
+Lucene.
+
+Very simple Lucene.
+Very simple Lucene.
+Very simple Lucene with some nice inlined
+bold code
+\cdbd{org.lucene.analysis.Analyzer} stuff.
+Very simple Lucene.
+and some simpler \cd{com.aliasi.lingpipe} stuff.
+Very simple Lucene.
+Very simple Lucene.
+
+\codeblock{HelloWorld.1}%
+
+\noindent
+Continuing after figure with more very simple Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very simple Lucene.
+
+Very simple Lucene.
+Very simple Lucene.
+Very simple Lucene.
+
+\codeblock{GoodbyeWorld.1}%
+
+Very simple Lucene.
+Very simple Lucene.
+Very simple Lucene.
+
+Very simple Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very simple Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+
+\codeblock{GoodbyeWorld.2}%
+
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very trivially simplified versus  Lucene.
+Very simple Lucene.
+Very simple Lucene.
+Very trivially simplified versus  Lucene.
+Very simple Lucene.
+
+\mychapter{The Document}{DOCUMENT}
+
+\firstchar{L}et's start this chapter off right with a nice
+first letter.  Nice first letter. Letter.
+Nice first letter. Letter.
+
+\mysection{Fields and Values}
+
+\noindent
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+
+
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+Documents are made up of fields with string values.
+
+Some bits of documents can be saved; others can't..  Be saved.
+can be saved; others can't..  Bits of documents.
+Some bits of documents can be saved; others can't..  Be saved.
+can be saved; others can't..  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+can be saved; others can't..  Bits of documents.
+Some bits of documents can be saved; others can't..  Be saved.
+can be saved; others can't..  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+can be saved; others can't..  Bits of documents.
+Some bits of documents can be saved; others can't..  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved; others can't..  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved; others can't..  Be saved.
+can be saved; others can't..  Bits of documents.
+Some bits of documents can be saved; others can't..  Be saved.
+can be saved; others can't..  Bits of documents.
+Some bits of documents can be saved; others can't..  Be saved.
+can be saved; others can't..  Bits of documents.
+Some bits of documents can be saved; others can't..  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved; others can't..  Be saved.
+can be saved; others can't..  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+can be saved; others can't..  Bits of documents.
+
+Some bits of documents can be saved; others can't..  Be saved.
+can be saved; others can't..  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be savedh.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+Some bits of documents can be saved.  Be saved.
+Can be saved.  Bits of documents.
+
+\end{document}

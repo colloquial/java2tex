@@ -1,0 +1,88 @@
+\usepackage[scale=0.85]{lucimatx}
+\linespread{1.05}
+
+%\renewcommand{\rmdefault}{ptm} % set roman; comment out for Lucida Bright
+\usepackage{graphicx}
+%\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{latexsym}
+
+\setlength{\paperwidth}{7.375in}
+\setlength{\paperheight}{9.25in}
+\pdfpagewidth=\paperwidth
+\pdfpageheight=\paperheight
+
+
+\setlength{\textwidth}{5.0in}
+\setlength{\textheight}{7.5in}
+
+\setlength{\oddsidemargin}{0.125in}
+\setlength{\evensidemargin}{0.25in}
+\setlength{\topmargin}{-0.5in}
+
+\setlength{\headsep}{12pt}
+\setlength{\headheight}{16pt}
+
+\sloppy % no over-runs on lines
+\raggedbottom % allows uneven pages (vs. \flushbottom)
+
+% \makeindex
+% \makeglossary
+
+% code
+\newcommand{\cd}[1]{{\ttfamily #1}}
+% code bold
+\newcommand{\cdbd}[1]{{\fontseries{b}\ttfamily #1}}
+
+\newcommand{\autocodedir}{autoCode}
+\newcommand{\codeblock}[1]{\vspace*{8pt}{\noindent\ttfamily\input{\autocodedir/#1}}\\[-4pt]}
+
+\def\fnum@figure{{\sc Fig.} \thefigure}
+
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+\renewcommand{\headrulewidth}{0.0in}
+
+\newcommand{\mychapter}[2]{%
+\clearpage
+\thispagestyle{empty}
+\renewcommand{\chaptername}{#1}%
+\setcounter{section}{0}%
+\addtocounter{chapter}{1}%
+\mychapterstar{\thechapter. \ \ #1}{#2}
+}
+
+
+\newcommand{\mychapterstar}[2]{%
+\cleardoublepage%
+\renewcommand{\chaptername}{#1}%
+\fancyhead[LE]{\small\thepage}%
+\fancyhead[RE]{{\footnotesize\it\booknamecaps}}%
+\fancyhead[LO]{{\footnotesize\it #2}}%
+\fancyhead[RO]{{\small\thepage}}%
+\thispagestyle{plain}%
+\vspace*{0.25in}%
+{\hfill{\Huge\bf #1}}
+\vspace*{0.5in}%
+}
+
+\newcommand{\mysection}[1]{%
+\addtocounter{section}{1}%
+\vspace*{.35in}%
+{\noindent{\Large\bf \thechapter.\thesection \ \ \ #1}}%
+\vspace*{.1in}%
+\noindent%
+}
+
+
+\newlength{\charWidth}
+\settowidth{\charWidth}{\tt X}
+\newcommand{\brkeol}{\mbox{\tiny $\rhd$}} % swarrow
+\newcommand{\brkbol}{\mbox{\tiny $\rhd$}} % hookrightarrow
+\newcommand{\brkLine}[1]{\\ \hspace*{#1\charWidth}}
+\newcommand{\plnLine}[1]{\hspace*{#1\charWidth}}
+\newcommand{\empLine}{\\[-8pt]}
+
+\newcommand{\cdBold}[1]{{\bf\ttfamily #1}}

@@ -1,0 +1,53 @@
+INSTALLING LUCIDA FONTS FROM PCTEX
+======================================================================
+
+instrux: http://www.pctex.com/kb/50.html
+
+1. Install MikTeX from miktex.org
+
+2. Install Lucida Fonts
+
+2.1  Buy Lucida Fonts, Metrics and Styles from:
+     http://store.pctexstore.com/lucidafonts.html
+
+     checkout and they'll send you a download code
+
+
+2.2  Download Package and save it somewhere safe
+
+     lucimatx.zip.tpm
+
+2.3  create local texmf directory $localtexmf and unpack distro
+
+     > cp lucimatx.zip.tpm $localtexmf
+     > cd $localtexmf
+     > unzip lucimatx.zip.tpm  [from Cygwin package]
+     > cd ..
+     > chmod -R 0777 $localtexmf     [could probably do with less here]
+
+     > mkdir web2c
+     > echo "Map lucida.map #localtexmf\dvips\lucida\lucida.map" > web2c/updmap.cfg
+       (but without quotes -- don't know how to do this reliably)
+
+2.4  Open MikTeX control to add
+     All Programs >> MikTex >> Maintenance >> Settings;
+     then in app Roots >> Add
+
+     add $localtexmf/texmf
+
+2.5  back in the shell, update the MikTeX map
+
+     > cd web2c
+     > updmap          [MikTeX program; takes a while]
+                       (bombs with permission problem on cache-2 file; remove it 
+                        give self permission to write in its dir; chown if nec.)
+
+
+3. Test
+   > mkdir $temp  [outside the distro]
+   > cp "$localtexmf/templates/LateX Lucida Test.tex" $temp/test.tex
+   > cp "$localtexmf/texmf/tex/latex/lucimatx/lucimatx.sty $temp
+   > cd $temp
+   > pdflatex test.tex
+   > test.pdf  [should launch pdf viewer]
+
