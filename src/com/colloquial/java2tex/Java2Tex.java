@@ -124,10 +124,11 @@ public class Java2Tex {
 
     static void walk(File inPath, File outDir, int lineLength, String inEncoding, String outEncoding, Pattern pattern)
         throws IOException {
-
+        if (inPath.getName().startsWith(".#")) return; // ignore emacs .#tmp files 
         if (inPath.isFile()) {
             if (pattern.matcher(inPath.getCanonicalPath()).find()) {
                 // System.out.println("+" + inPath);
+                System.out.flush();
                 process(inPath,outDir,lineLength,inEncoding,outEncoding);
             } else {
                 // System.out.println("-" + inPath);
