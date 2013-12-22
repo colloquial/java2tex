@@ -253,11 +253,11 @@ public class Java2Tex {
         
         String modLine
             = line
-            // .trim()
-            .replace("\\","\\bk")
+            .trim()
+            .replace("\\","\\textbackslash")
             .replace("{","\\{")
             .replace("}","\\}")
-            .replace("\\bk","{\\bk}")
+            .replace("\\textbackslash","{\\textbackslash}")
             .replace("#","\\#")
             .replace("$","\\$")
             .replace("%","\\%")
@@ -265,15 +265,16 @@ public class Java2Tex {
             .replace("&","\\&")
             .replace("_","\\_")
             .replace("~","\\~{}")
-            .replace("! ","!\\ ")
-            .replace("? ","?\\ ")
-            .replace(". ",".\\ ")
-            .replace(": ",":\\ ")
+            .replace("! ","!~")
+            .replace("? ","?~")
+            .replace(". ",".~")
+            .replace(": ",":~")
             .replace("--","{-}{-}")
             .replace(">","{>}")
             .replace("'","{\\textquotesingle}")
             .replaceAll(BBF_REGEX,"\\\\cdBold{")  // /*bbf*/ -> \cdBold{ 
-            .replaceAll(EBF_REGEX,"}");           // /*ebf*/ -> }
+            .replaceAll(EBF_REGEX,"}")           // /*ebf*/ -> }
+            .replaceAll(" ","~");
         sb.append("\\mbox{" + modLine + "}");
         if (addContinuationEnd)
             sb.append("{\\brkeol}");
