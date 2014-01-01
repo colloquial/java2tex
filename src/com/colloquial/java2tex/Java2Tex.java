@@ -272,7 +272,7 @@ public class Java2Tex {
             .replace("--","{-}{-}")
             .replace(">","{>}")
             .replace("'","{\\textquotesingle}")
-            .replaceAll(BBF_REGEX,"\\\\cdBold{")  // /*bbf*/ -> \cdBold{ 
+            .replaceAll(BBF_REGEX,"\\\\codeBold{")  // /*bbf*/ -> \codeBold{ 
             .replaceAll(EBF_REGEX,"}")           // /*ebf*/ -> }
             .replaceAll(" ","~");
         sb.append("\\mbox{" + modLine + "}");
